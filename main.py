@@ -38,7 +38,9 @@ class OlzMotorsports(commands.Bot):
     async def setup_hook(self) -> None:
 
         # Loading up the cogs!
-        cogs_to_load = []
+        cogs_to_load = [
+            'cogs.roster'
+        ]
         start_time = time.perf_counter()
         for cog in cogs_to_load:
             await self.load_extension(cog)
