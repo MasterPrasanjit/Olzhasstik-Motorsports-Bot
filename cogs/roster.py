@@ -44,32 +44,31 @@ class RosterSelectMenu(discord.ui.Select):
 
 class RosterView(discord.ui.View):
     def __init__(self, guild: discord.Guild):
-
         self.guild = guild
-        self.select_view = discord.ui.View(timeout=500)
 
         super().__init__(timeout=None)
 
-    def attach_select_menu(self, category: Literal['GTE', 'GT3']) -> None:
+    def make_select_menu(self, category: Literal['GTE', 'GT3']) -> discord.ui.View:
         """Clears the old select menu if exists and attaches a new one to the view."""
 
-        if self.select_view.children:
-            self.select_view.clear_items()
-        self.select_view.add_item(RosterSelectMenu(self.guild, category))
+        select_view = discord.ui.View(timeout=500)
+        select_view.add_item(RosterSelectMenu(self.guild, category))
+
+        return select_view
 
     @discord.ui.button(label='GTE Roster', style=discord.ButtonStyle.primary, custom_id='gte_roster_bt')
     async def gte_roster(self, interaction: discord.Interaction, _button: discord.ui.Button):
 
-        self.attach_select_menu(category='GTE')
+        select_view = self.make_select_menu(category='GTE')
         await interaction.response.send_message(
-            '**__Pick a GTE team from the menu!__**', ephemeral=True, view=self.select_view)
+            '**__Pick a GTE team from the menu!__**', ephemeral=True, view=select_view)
 
     @discord.ui.button(label='GT3 Roster', style=discord.ButtonStyle.primary, custom_id='gt3_roster_bt')
     async def gt3_roster(self, interaction: discord.Interaction, _button: discord.ui.Button):
 
-        self.attach_select_menu(category='GT3')
+        select_view = self.make_select_menu(category='GT3')
         await interaction.response.send_message(
-            '**__Pick a GT3 team from the menu!__**', ephemeral=True, view=self.select_view)
+            '**__Pick a GT3 team from the menu!__**', ephemeral=True, view=select_view)
 
 
 class RosterEmbed(discord.Embed):
