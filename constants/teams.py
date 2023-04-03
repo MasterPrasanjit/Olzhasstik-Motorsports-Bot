@@ -32,6 +32,7 @@ class GT3Team:
 
 
 GT3_TEAMS = [
+    GT3Team(1092386626359001088, [Brand.AUDI, Brand.BENTLEY]),  # Absolute Racing
     GT3Team(1060062099402932284, [Brand.AUDI, Brand.LAMBORGHINI]),  # Attempto Racing
     GT3Team(1060098426123067475, [Brand.HONDA]),  # Team Honda Racing
     GT3Team(1060059982877425724, [Brand.FERRARI, Brand.MCLAREN]),  # Inception Racing
