@@ -33,7 +33,6 @@ class GT3Team:
 
 GT3_TEAMS = [
     GT3Team(1060062099402932284, [Brand.AUDI, Brand.LAMBORGHINI]),  # Attempto Racing
-    GT3Team(1060102782704701470, [Brand.BENTLEY]),  # Bentley M-Sport
     GT3Team(1060098426123067475, [Brand.HONDA]),  # Team Honda Racing
     GT3Team(1060059982877425724, [Brand.FERRARI, Brand.MCLAREN]),  # Inception Racing
     GT3Team(1060067765085552670, [Brand.MERCEDES, Brand.MCLAREN]),  # JP Motorsports
@@ -43,7 +42,6 @@ GT3_TEAMS = [
     GT3Team(1061580491913953352, [Brand.DODGE]),  # Riley Motorsports
     GT3Team(1060097709140344853, [Brand.BMW]),  # Schubert Motorsport
     GT3Team(1059822368597483600, [Brand.PORSCHE, Brand.MERCEDES]),  # Toro Racing Team
-    GT3Team(1060077426446704650, [Brand.PORSCHE, Brand.FERRARI]),  # TP12 Singha Motorsport
     GT3Team(1059830758769950741, [Brand.AUDI, Brand.BMW]),  # WRT Racing Team
     GT3Team(1061581029724393492, [Brand.DODGE]),  # Team Zakspeed
 ]
